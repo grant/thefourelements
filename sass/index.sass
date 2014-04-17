@@ -1,0 +1,84 @@
+@import reset
+
+$GREEN: rgb(138, 192, 158)
+$DARK_GREEN: rgb(116, 141, 120)
+$WHITE: rgb(255, 255, 255)
+$BLACK: rgb(24, 24, 24)
+
+$FONT_MEDIUM: 26px
+$FONT_LARGE: 40px
+
+body
+  font-family: 'Helvetica Neue Thin', 'HelveticaNeue-Thin', 'helvetica neue', helvetica, arial, 'lucida grande', sans-serif
+  line-height: 1.2
+
+.leftArea
+  background-color: $DARK_GREEN
+  color: $WHITE
+  overflow-y: auto
+  width: 33.3%
+  padding: 1.5% 2%
+  .name
+    font-size: $FONT_LARGE
+  .description
+    font-style: italic
+  .description, .instructions
+    font-weight: 100
+    color: $GREEN
+  .instructions, .devnotes
+    padding-top: 2%
+    ul
+      color: $GREEN
+      font-size: $FONT_MEDIUM
+      list-style: disc
+      margin-left: 30px
+      li
+        padding-top: 1%
+    .title
+      font-size: $FONT_MEDIUM
+      font-weight: 700
+      color: $WHITE
+  .githubLink
+    display: inline-block
+    color: $WHITE
+    padding-bottom: 5px
+    border-bottom: 1px $WHITE solid
+    transition: color 200ms, border-bottom-color 200ms
+    &:hover
+      color: $GREEN
+      border-bottom-color: $GREEN
+  .description, .instructions, .githubLink
+    font-size: $FONT_MEDIUM
+    padding-top: 3%
+.rightArea
+  position: relative
+  width: 66.6%
+  background-color: $BLACK
+  .swf
+    transition: all 100ms
+.leftArea, .rightArea
+  float: left
+  height: 100%
+
+.closeButton
+  $size: 4%
+  position: absolute
+  width: $size
+  overflow: hidden
+  &:before
+    content: ""
+    display: block
+    padding-top: 100%
+  .content
+    overflow: hidden
+    position: absolute
+    top: 0
+    left: 0
+    bottom: 0
+    right: 0
+    padding: 10% 15%
+    background: linear-gradient(to right bottom, rgba(0, 0, 0, 0.3) 50%, transparent 50%)
+    user-select: none
+    z-index: 100
+    color: $BLACK
+    cursor: pointer
